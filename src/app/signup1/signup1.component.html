@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <style>
+            *{
+                margin:0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body{
+                
+                background-color: teal;
+            }
+            .hell{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                height: 100vh; 
+            }
+            form{
+                text-align: center;
+            }
+            input{
+                display: block;
+                width: 350px;
+                height: 40px;
+                margin: 20px;
+                border: none;
+                outline: none;
+                font-size: 20px;
+                border-bottom: 1px solid black;
+                padding: 5px;
+            }
+            button{
+                width: 350px;
+                height: 40px;
+                font-size: 20px;
+                border: none;
+            }
+            
+        </style>
+    </head>
+    <body>
+        
+        <button type="button" class="btn btn-primary" style="width: 65px;font-size:15px;border-radius:10px;margin: 20px;float:right;" (click)="login()">Sign In</button>
+
+        <button type="button" class="btn btn-primary" style="width: 65px;font-size:15px;border-radius:10px;margin: 20px;margin-right:0px;float:right;" (click)="signUp4()">Sign Up</button>
+        <div class="hell">
+        <form #myForm="ngForm">
+            <h1 style="color: white;">SignUp</h1>
+            <input type="text" id="username" placeholder="Username" required [(ngModel)] = "user.UserName" name="user.UserName">
+            <div class="example-container">
+                  <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" required [(ngModel)] = "user.Password" name="user.Password">
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon >{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                </div>
+           <!-- <input type="password" name="" placeholder="Password" required [(ngModel)] = "user.Password" name="user.Password">
+            <input type="password" name="" placeholder="Confirm Password" required [(ngModel)] = "conformpassword" name="conformpassword"><br>-->
+            <button type="submit" class="btn btn-primary"  [disabled]="!myForm.form.valid" (click)="signup()">Submit</button>
+            
+        </form>
+        </div>
+    </body>
+</html>

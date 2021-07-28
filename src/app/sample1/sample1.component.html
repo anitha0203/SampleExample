@@ -1,0 +1,36 @@
+<!--<form   #myForm="ngForm">
+  <div style="padding: 25px;text-align:center;font-size: 18px;" >
+    <div>
+    FirstName : 
+    <input type="text" class="form-control" #fname required>
+  </div><br>
+  <div>
+    LastName : 
+    <input type="text" class="form-control" #lname>
+  </div><br>
+  
+  <button  (click)="clickEvent()">Submit</button><br>
+  <h2>{{message}}</h2>
+  </div>
+</form>-->
+
+
+<form  #myForm="ngForm" style="padding: 25px;text-align:center;font-size: 18px;">
+
+  <div class="form-group">
+    <label for="fname">First Name : </label>
+    <input type="text" class="form-control"  
+      required [(ngModel)]="fname" name="fname" >
+  </div><br>
+
+  <div class="form-group">
+   <label for="lname">Last Name : </label>
+   <input type="text"  class="form-control" id="lname" 
+     required [(ngModel)] = "lname" name="lname" >
+  </div><br>
+
+  <button type="submit" [disabled]="!myForm.form.valid" (click)="clickEvent()">Submit</button>
+  <h2>{{message}}</h2>
+</form>
+  
+  
